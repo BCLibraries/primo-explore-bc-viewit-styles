@@ -12,7 +12,8 @@ angular
           const viewitContainer = document.querySelector('prm-alma-viewit');
 
           Object.keys(services).forEach(key => {
-            let isInstLogin = services[key].packageName == "Institutional Login";
+            let packageName = services[key].packageName.toLowerCase();
+            let isInstLogin = packageName.includes('access') || packageName.includes('log in to') || packageName.includes('watch');
             if (isInstLogin) {
               viewitContainer.classList.remove('bc-viewit-item');
               viewitContainer.classList.add('inst-login');
