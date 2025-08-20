@@ -1,18 +1,27 @@
 angular
-  .module('bc-hide-locate',[])
-  .component('prmFullViewAfter', {
+  .module('bc-viewit-styles', [])
+  .component('prmAlmaViewitItemsAfter', {
     bindings: { parentCtrl: '<' },
     controller: function () {
       const vm = this;
       vm.$onInit = function() {
-          const callNumber = vm.parentCtrl.item.delivery.holding[0].callNumber;
-          const fullViewContainer = document.querySelector('prm-full-view');
+        const isGES = vm.parentCtrl.serviceType === 'GENERAL_ELECTRONIC';
+        const services = vm.parentCtrl.services;
 
-          if (callNumber && callNumber.toLowerCase().includes('newspaper')) {
-            fullViewContainer.classList.add('hide-locate');
-          } else {
-            fullViewContainer.classList.remove('hide-locate');
-          }
-      };
+        if (isGES && services) {
+          const viewitContainer = document.querySelector('prm-alma-viewit');
+
+          Object.keys(services).forEach(key => {
+            let isInstLogin = services[key].packageName == "Institutional Login";
+            if (isInstLogin) {
+              viewitContainer.classList.remove('bc-viewit-item');
+              viewitContainer.classList.add('inst-login');
+            } else {
+              viewitContainer.classList.add('bc-viewit-item');
+              viewitContainer.classList.remove('inst-login');
+            }
+          })
+        }
+      }
     }
   });
