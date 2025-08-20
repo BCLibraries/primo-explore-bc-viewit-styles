@@ -1,0 +1,27 @@
+/* Default Viewit style */
+
+.bc-viewit-item prm-alma-viewit-items:first-of-type > md-list {
+    background-color: #f3f3f3;
+    padding: 1rem;
+}
+
+.bc-viewit-item prm-alma-viewit-items:first-of-type .item-title {
+    font-weight: 700;
+}
+
+.bc-viewit-item prm-alma-viewit-items:nth-of-type(2) .item-title {
+    font-size: 15px;
+}
+
+/* Institutional login style */
+
+.inst-login prm-alma-viewit-items:nth-of-type(2) md-list-item:first-of-type {
+    background-color: #f3f3f3;
+    padding: 1rem;
+}
+
+.inst-login prm-alma-viewit-items:nth-of-type(2) md-list-item:first-of-type p {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    font-style: normal;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "primo-explore-bc-viewit-styles",
+  "version": "0.0.1",
+  "description": "Adds conditional styles/classes to viewit section",
+  "main": "index.js"
+}
